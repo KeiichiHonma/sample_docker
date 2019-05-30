@@ -1,0 +1,26 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  namespace: sample
+  name: mysql-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: standard
+  hostPath:
+    path: "/tmp/mysql"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: sample
+  name: mysql-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: standard

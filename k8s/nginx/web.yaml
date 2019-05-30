@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webserver-service
+spec:
+  selector:
+    app: rails
+    server: web
+  #type: ClusterIP
+  type: NodePort
+
+  ports:
+  - port: 3000
+    nodePort: 30000
+---
+# Deployment の定義
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # この Deployment の名前
+  name: web
+  # この Deployment につけるラベル
+  labels:
+    app: rails
+
+# 管理する ReplicaSet の定義
+spec:
+  # 展開するレプリカ数
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  # Label がこれらにマッチした Pod をこの ReplicaSet の配下に置く
+  selector:
+    matchLabels:
+      server: web
+
+
+  # 展開する Pod の定義
+  template:
+    metadata:
+      # この Pod につける Label
+      labels:
+        app: rails
+        server: web
+
+    spec:
+      volumes:
+        - name: sockets
+          emptyDir: {}
+
+      containers:
+        - name: nginx
+          # イメージの指定
+          image: asia.gcr.io/testing-20190417/sample_docker/web:latest
+          imagePullPolicy: Never
+          ports:
+            # Service から受けるポート
+            - name: http
+              containerPort: 8080
+          volumeMounts:
+            - mountPath: /sockets
+              name: sockets
+            # - mountPath: /var/log/nginx
+            #   name: log

@@ -1,0 +1,13 @@
+threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
+threads threads_count, threads_count
+port        ENV.fetch("PORT") { 3000 }
+environment ENV.fetch("RAILS_ENV") { "development" }
+plugin :tmp_restart
+
+app_root = File.expand_path("../..", __FILE__)
+#bind "unix://#{app_root}/sockets/puma.sock"
+bind "unix:///sockets/puma.sock"
+pidfile "#{app_root}/tmp/pids/puma.pid"
+#pidfile "/pids/puma.pid"
+
+stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true

@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webserver-service
+
+spec:
+  # ingress 経由なのでクラスタ内に閉じておく
+  # type: ClusterIP
+  type: NodePort
+  selector:
+    # これにマッチした pod に流す
+    app: sample_docker
+    server: web
+  ports:
+    - name: http
+      protocol: TCP
+      # 受信するポート
+      port: 84
+      # 送信するポート
+      targetPort: http
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver-deployment
+  labels:
+    app: sample_docker
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample_docker
+      server: web
+  template:
+    metadata:
+      labels:
+        app: sample_docker
+        server: web
+    spec:
+      volumes:
+        - name: sockets
+          emptyDir: {}
+      containers:
+        - name: nginx
+          image: sample_docker-nginx:latest
+          imagePullPolicy: Never
+          ports:
+            # service から受けるポート
+            - name: http
+              containerPort: 8080
+          volumeMounts:
+            - mountPath: /sockets
+              name: sockets
+
+        - name: rails
+          image: sample_docker-app:latest
+          # デフォルトで pull しにいってコケるので Never させないようにする
+          imagePullPolicy: Never
+          env:
+            - name: DB_HOST
+              value: dbserver-service.default.svc.cluster.local
+          volumeMounts:
+            - mountPath: /sockets
+              name: sockets

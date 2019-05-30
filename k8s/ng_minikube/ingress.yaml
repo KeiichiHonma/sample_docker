@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: sample
+  name: ingress
+spec:
+  rules:
+  - host: development.barth.jp
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: webserver-service
+          servicePort: 3000

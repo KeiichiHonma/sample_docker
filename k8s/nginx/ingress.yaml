@@ -1,7 +1,6 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  namespace: sample
   name: rails-ing
 spec:
   rules:
@@ -10,5 +9,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: rails
+          serviceName: webserver-service
           servicePort: 3000

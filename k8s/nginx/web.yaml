@@ -11,6 +11,7 @@ spec:
 
   ports:
   - port: 3000
+    targetPort: 8080
     nodePort: 30000
 ---
 # Deployment の定義
@@ -47,21 +48,12 @@ spec:
         server: web
 
     spec:
-      volumes:
-        - name: sockets
-          emptyDir: {}
-
       containers:
         - name: nginx
           # イメージの指定
-          image: asia.gcr.io/testing-20190417/sample_docker/web:latest
+          image: asia.gcr.io/testing-20190417/only_nginx/web:latest
           imagePullPolicy: Never
           ports:
             # Service から受けるポート
             - name: http
               containerPort: 8080
-          volumeMounts:
-            - mountPath: /sockets
-              name: sockets
-            # - mountPath: /var/log/nginx
-            #   name: log

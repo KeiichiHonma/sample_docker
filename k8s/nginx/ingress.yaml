@@ -5,7 +5,7 @@ metadata:
   name: rails-ing
 spec:
   rules:
-  - host: testing.saple-docker.jp
+  - host: development.barth.jp
     http:
       paths:
       - path: /

@@ -52,7 +52,7 @@ spec:
         - name: nginx
           # イメージの指定
           image: asia.gcr.io/testing-20190417/only_nginx/web:latest
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
             # Service から受けるポート
             - name: http

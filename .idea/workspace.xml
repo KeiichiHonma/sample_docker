@@ -31,8 +31,17 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+            <state relative-caret-position="509">
+              <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -50,7 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>server</find>
       <find>app: mysql</find>
       <find>hostPath</find>
       <find>/var/lib/mysql</find>
@@ -80,6 +88,7 @@
       <find>rails</find>
       <find>targetPort</find>
       <find>CLOUDSDK_COMPUTE_ZONE</find>
+      <find>account-auth</find>
     </findStrings>
     <replaceStrings>
       <replace>sample_docker</replace>
@@ -121,6 +130,7 @@
         <option value="$PROJECT_DIR$/k8s/nginx/ingress.yaml" />
         <option value="$PROJECT_DIR$/containers/nginx/default/nginx.conf" />
         <option value="$PROJECT_DIR$/k8s/nginx/web.yaml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
       </list>
     </option>
@@ -320,12 +330,12 @@
       <updated>1555391657326</updated>
       <workItem from="1555391659110" duration="54999000" />
       <workItem from="1558401146696" duration="18383000" />
-      <workItem from="1559193984580" duration="20201000" />
+      <workItem from="1559193984580" duration="20780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93583000" />
+    <option name="totallyTimeSpent" value="94162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="128" y="-8" width="1800" height="1096" extended-state="6" />
@@ -384,13 +394,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../rails_puma_gke_sample/k8s/cloudsql/web.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -672,10 +675,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+        <state relative-caret-position="509">
+          <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
         </state>
       </provider>
     </entry>

@@ -65,8 +65,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               apt-get install -qq -y gettext
 
-              $echo $ACCT_AUTH | base64 --decode > ${HOME}/account-auth.json
-              echo "foobar" | base64 --wrap=0
+              echo $ACCT_AUTH | base64 --decode > ${HOME}/account-auth.json
 
               gcloud auth activate-service-account --key-file ${HOME}/account-auth.json
               gcloud config set project $PROJECT_NAME

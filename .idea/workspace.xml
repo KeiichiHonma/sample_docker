@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="875948cd-103e-4b5d-aa05-499b40745a1d" name="デフォルト" comment="" />
+    <list default="true" id="875948cd-103e-4b5d-aa05-499b40745a1d" name="デフォルト" comment="">
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -30,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="492">
-              <caret line="66" column="59" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="59" />
+              <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -318,12 +320,12 @@
       <updated>1555391657326</updated>
       <workItem from="1555391659110" duration="54999000" />
       <workItem from="1558401146696" duration="18383000" />
-      <workItem from="1559193984580" duration="19958000" />
+      <workItem from="1559193984580" duration="20201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93340000" />
+    <option name="totallyTimeSpent" value="93583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="128" y="-8" width="1800" height="1096" extended-state="6" />
@@ -673,7 +675,7 @@
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
-          <caret line="66" column="59" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="59" />
+          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
         </state>
       </provider>
     </entry>

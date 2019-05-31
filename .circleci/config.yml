@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /app
     environment:
-      PROJECT_NAME: testing-190417
+      PROJECT_NAME: testing-20190417
       CLUSTER_NAME: sample-docker
       CLOUD_REGISTRY_NAME: only_nginx
       CLOUDSDK_COMPUTE_ZONE: asia-northeast1-a

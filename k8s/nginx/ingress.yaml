@@ -2,9 +2,14 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: rails-ing
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: https-demo-ip
+    ingress.gcp.kubernetes.io/pre-shared-cert: https-demo-cert
 spec:
+  tls:
+  - secretName: cert-manager-tls
   rules:
-  - host: development.barth.jp
+  - host: ssl-sleepdays.com
     http:
       paths:
       - path: /

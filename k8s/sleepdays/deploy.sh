@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo 1
 # 前のJobが残っていたらまずは消す
 kubectl delete job setup 2&> /dev/null || true
 # マイグレート用のJobを作成し、実行します
@@ -11,7 +11,7 @@ while [ true ]; do
     break
   fi
 done
-
+echo 2
 # Jobの終了状態を取得します
 while [ true ]; do
   succeeded=`kubectl get jobs setup -o 'jsonpath={.status.succeeded}'`

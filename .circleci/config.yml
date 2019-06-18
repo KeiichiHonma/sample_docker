@@ -22,22 +22,22 @@ jobs:
       - setup_remote_docker:
           version: 18.09.3
 
-      - restore_cache:
-          keys:
-            - v1-{{ .Branch }}
-          paths:
-            - /caches/app.tar
+      #- restore_cache:
+      #    keys:
+      #      - v1-{{ .Branch }}
+      #    paths:
+      #      - /caches/app.tar
 
       - run:
           name: Check docker version
           command: |
             docker version
 
-      - run:
-          name: Load Docker image layer cache
-          command: |
-            set +o pipefail
-            docker load -i /caches/app.tar | true
+      #- run:
+      #    name: Load Docker image layer cache
+      #    command: |
+      #      set +o pipefail
+      #      docker load -i /caches/app.tar | true
 
       - run:
           name: Build application Docker image
@@ -47,17 +47,17 @@ jobs:
             docker tag asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:$CIRCLE_SHA1 asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:latest
             docker tag asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:$CIRCLE_SHA1 asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:latest
 
-      - run:
-          name: Save Docker image layer cache
-          command: |
-            mkdir -p /caches
-            docker save -o /caches/app.tar asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:latest
-            docker save -o /caches/app.tar asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:latest
+      #- run:
+      #    name: Save Docker image layer cache
+      #    command: |
+      #      mkdir -p /caches
+      #      docker save -o /caches/app.tar asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:latest
+      #      docker save -o /caches/app.tar asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:latest
 
-      - save_cache:
-          key: v1-{{ .Branch }}-{{ epoch }}
-          paths:
-            - /caches/app.tar
+      #- save_cache:
+      #    key: v1-{{ .Branch }}-{{ epoch }}
+      #    paths:
+      #      - /caches/app.tar
 
       - deploy:
           name: Deploy application Docker image
@@ -78,7 +78,7 @@ jobs:
               envsubst < ${MANIFESTS_DIR}/job.yaml > ${MANIFESTS_DIR}/patched_job.yaml
               chmod +x ${MANIFESTS_DIR}/deploy.sh
               ${MANIFESTS_DIR}/deploy.sh
-              kubectl apply -f ${MANIFESTS_DIR}/patched_ingress.yaml --record
+              #kubectl apply -f ${MANIFESTS_DIR}/patched_ingress.yaml --record
               kubectl apply -f ${MANIFESTS_DIR}/patched_web.yaml --record
               kubectl apply -f ${MANIFESTS_DIR}/patched_job.yaml --record
             fi

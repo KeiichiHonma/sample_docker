@@ -1,0 +1,17 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: ssl-sleepdays-com
+spec:
+  secretName: cert-manager-tls
+  issuerRef:
+    name: letsencrypt-prod
+  commonName: ssl-sleepdays.com
+  dnsNames:
+  - ssl-sleepdays.com
+  acme:
+    config:
+    - dns01:
+        provider: prod-dns
+      domains:
+      - ssl-sleepdays.com

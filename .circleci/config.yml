@@ -5,12 +5,14 @@ jobs:
     environment:
       PROJECT_NAME: testing-20190417
       CLUSTER_NAME: sample-docker
-      CLOUD_REGISTRY_NAME: only_nginx
+      #CLOUD_REGISTRY_NAME: only_nginx
+      CLOUD_REGISTRY_NAME: sample_docker
       CLOUDSDK_COMPUTE_ZONE: asia-northeast1-a
       SQL_INSTANCE_NAME: testing-20190417:asia-northeast1:sample-docker-sql
 
       # MANIFESTS_DIR: ./k8s/gke_rails_puma
-      MANIFESTS_DIR: ./k8s/nginx
+      #MANIFESTS_DIR: ./k8s/nginx
+      MANIFESTS_DIR: ./k8s/sleepdays
       DEBIAN_FRONTEND: noninteractive
       GOOGLE_APPLICATION_CREDENTIALS: ${HOME}/account-auth.json
     docker:
@@ -40,19 +42,17 @@ jobs:
       - run:
           name: Build application Docker image
           command: |
-            # docker build -t asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:$CIRCLE_SHA1 containers/nginx
-            # docker build -t asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:$CIRCLE_SHA1 .
-            docker build --cache-from=asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:latest -t asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:$CIRCLE_SHA1 containers/nginx/default
-            #docker build --cache-from=asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:latest -t asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:$CIRCLE_SHA1 .
+            docker build --cache-from=asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:latest -t asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:$CIRCLE_SHA1 containers/nginx/rails_puma
+            docker build --cache-from=asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:latest -t asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:$CIRCLE_SHA1 .
             docker tag asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:$CIRCLE_SHA1 asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:latest
-            #docker tag asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:$CIRCLE_SHA1 asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:latest
+            docker tag asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:$CIRCLE_SHA1 asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:latest
 
       - run:
           name: Save Docker image layer cache
           command: |
             mkdir -p /caches
             docker save -o /caches/app.tar asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:latest
-            #docker save -o /caches/app.tar asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:latest
+            docker save -o /caches/app.tar asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:latest
 
       - save_cache:
           key: v1-{{ .Branch }}-{{ epoch }}
@@ -64,7 +64,6 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               apt-get install -qq -y gettext
-              # echo $ACCT_AUTH | base64 --decode > ${HOME}/account-auth.json
               echo -n $ACCT_AUTH | base64 --decode > ${HOME}/account-auth.json
               gcloud auth activate-service-account --key-file ${HOME}/account-auth.json
               gcloud config set project $PROJECT_NAME
@@ -73,7 +72,7 @@ jobs:
               gcloud --quiet container clusters get-credentials $CLUSTER_NAME
               gcloud config set container/use_client_certificate True
               gcloud docker -- push asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:$CIRCLE_SHA1
-              #gcloud docker -- push asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:$CIRCLE_SHA1
+              gcloud docker -- push asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:$CIRCLE_SHA1
               # kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=${HOME}/account-auth.json
               envsubst < ${MANIFESTS_DIR}/ingress.yaml > ${MANIFESTS_DIR}/patched_ingress.yaml
               envsubst < ${MANIFESTS_DIR}/web.yaml > ${MANIFESTS_DIR}/patched_web.yaml

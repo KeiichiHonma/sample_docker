@@ -86,7 +86,7 @@ spec:
 
         - name: nginx
           # イメージの指定
-          image: asia.gcr.io/testing-20190417/sample_docker/web:latest
+          image: asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/web:$CIRCLE_SHA1
           imagePullPolicy: IfNotPresent
           ports:
             # Service から受けるポート
@@ -97,31 +97,53 @@ spec:
               name: sockets
 
         - name: rails
-          image: asia.gcr.io/testing-20190417/sample_docker/app:latest
+          image: asia.gcr.io/${PROJECT_NAME}/${CLOUD_REGISTRY_NAME}/app:$CIRCLE_SHA1
           imagePullPolicy: IfNotPresent
-
+          command:
+            - /bin/bash
+          args:
+            - -c
+            - cp -rf /sample_docker/tmp/public/* /sample_docker/public && rm -rf /sample_docker/tmp/public && bundle exec puma -C config/puma.rb
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 5
+            successThreshold: 1
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "sleep 25; kill -QUIT `(cat tmp/pids/puma.pid)`"]
           env:
             - name: TZ
               value: Asia/Tokyo
+            # - name: RAILS_ENV
+            #   value: development
             - name: RAILS_ENV
-              value: development
+              value: production
             - name: DB_HOST
               value: 127.0.0.1
+            #- name: SECRET_KEY_BASE
+            - name: RAILS_MASTER_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: secret
+                  key: secret_key_base
             - name: MYSQL_USER
               valueFrom:
                 secretKeyRef:
-                  name: cloudsql-password
+                  name: secret
                   key: username
             - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: cloudsql-password
+                  name: secret
                   key: password
+                  #key: rootpass
 
-          command: ["bundle", "exec", "puma", "-C", "config/puma.rb"]
-          envFrom:
-          - configMapRef:
-              name: rails-config
           volumeMounts:
-            - mountPath: /sockets
+            - mountPath: /sample_docker/sockets
               name: sockets
+            - mountPath: /sample_docker/public
+              name: public

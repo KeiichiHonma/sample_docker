@@ -3,7 +3,9 @@ echo 1
 # 前のJobが残っていたらまずは消す
 kubectl delete job setup 2&> /dev/null || true
 # マイグレート用のJobを作成し、実行します
+echo 2
 kubectl create -f ./k8s/sleepdays/patched_job.yaml
+echo 3
 # Jobが正常に実行されるまで待ちます
 while [ true ]; do
   phase=`kubectl get pods --selector="name=deploy-task" -o 'jsonpath={.items[0].status.phase}' || 'false'`

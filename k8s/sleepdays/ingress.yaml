@@ -9,7 +9,7 @@ spec:
   tls:
   - secretName: cert-manager-tls
   rules:
-  - host: ssl-sleepdays.com.
+  - host: ssl-sleepdays.com
     http:
       paths:
       - path: /

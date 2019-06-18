@@ -79,6 +79,9 @@ jobs:
               chmod +x ${MANIFESTS_DIR}/deploy.sh
               ${MANIFESTS_DIR}/deploy.sh
               #kubectl apply -f ${MANIFESTS_DIR}/patched_ingress.yaml --record
+              echo 4
               kubectl apply -f ${MANIFESTS_DIR}/patched_web.yaml --record
+              echo 5
               kubectl apply -f ${MANIFESTS_DIR}/patched_job.yaml --record
+              echo 6
             fi

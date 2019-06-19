@@ -51,6 +51,8 @@ spec:
       volumes:
         - name: sockets
           emptyDir: {}
+        - name: public
+          emptyDir: {}
         - name: cloudsql-instance-credentials
           secret:
             secretName: cloudsql-instance-credentials

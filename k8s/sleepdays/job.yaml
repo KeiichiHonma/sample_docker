@@ -32,9 +32,15 @@ spec:
       containers:
         - name: cloudsql-proxy
           image: gcr.io/cloudsql-docker/gce-proxy:1.11
-          command: ["/cloud_sql_proxy",
-                    "-instances=$(SQL_INSTANCE_NAME)=tcp:3306",
-                    "-credential_file=/secrets/cloudsql/credentials.json"]
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              echo "start connect cloud proxy"
+              /cloud_sql_proxy -instances=$(SQL_INSTANCE_NAME)=tcp:3306 -credential_file=/secrets/cloudsql/credentials.json &
+              while true; do
+                if [[ -f "/tmp/pod/terminated" ]]; then kill $!; echo "Killed $! because the main container terminated. And Job completed. Exiting..."; exit 0; fi;
+                sleep 1;
+              done
           securityContext:
             runAsUser: 2  # non-root user
             allowPrivilegeEscalation: false

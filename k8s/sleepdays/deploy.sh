@@ -19,6 +19,8 @@ echo 2
 while [ true ]; do
   succeeded=`kubectl get jobs setup -o 'jsonpath={.status.succeeded}'`
   failed=`kubectl get jobs setup -o 'jsonpath={.status.failed}'`
+  echo 7
+  echo failed
   if [[ "$succeeded" == "1" ]]; then
     break
   elif [[ "$failed" -gt "0" ]]; then

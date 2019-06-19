@@ -95,7 +95,7 @@ spec:
             - name: http
               containerPort: 8080
           volumeMounts:
-            - mountPath: /sockets
+            - mountPath: /sample_docker/sockets
               name: sockets
             - mountPath: /public
               name: public

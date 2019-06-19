@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 echo 1
 # 前のJobが残っていたらまずは消す
 kubectl delete job setup 2&> /dev/null || true

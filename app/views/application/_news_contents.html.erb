@@ -1,0 +1,45 @@
+<% if @latest_news.present? %>
+<ul class="common_news">
+  <% @latest_news.each do |news| %>
+  <li class="common_news_item">
+    <a href="<%= "/news/" + news.id.to_s %>">
+      <span class="news_date"><%= news.news_created_at.strftime('%b %d, %Y') if news.news_created_at %></span>
+      <%= news.title %>
+    </a>
+  </li>
+  <% end %>
+</ul>
+<% else %>
+<ul class="common_news">
+  <li class="common_news_item">
+    <a href="javascript:void(0)">
+      <span class="news_date"></span>
+      現在表示できる項目がございません。
+    </a>
+  </li>
+</ul>
+<% end %>
+
+
+<!--
+<ul class="common_news">
+  <li class="common_news_item">
+    <a href="/recovery-leg-fit">
+      <span class="news_date">November 16, 2018</span>
+      Recovery Leg Fit（リカバリーレッグフィット）のNewカラー、ピンクが発売されました。
+    </a>
+  </li>
+  <li class="common_news_item">
+    <a href="javascript:void(0)">
+      <span class="news_date">Oct 09, 2018</span>
+      サイトをリリースしました。
+    </a>
+  </li>
+  <li class="common_news_item">
+    <a href="/news/1">
+      <span class="news_date">July 18, 2018</span>
+      Recovery Leggings（リカバリーレギンス）の販売を2018年7月23日より開始致します。
+    </a>
+  </li>
+</ul>
+-->

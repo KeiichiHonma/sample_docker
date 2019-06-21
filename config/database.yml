@@ -10,13 +10,13 @@ default: &default
 
 development:
   <<: *default
-  database: sample_docker_development
-
+  database: sleepdays_development
 
 test:
   <<: *default
-  database: sample_docker_test
+  database: sleepdays_test
 
 production:
   <<: *default
-  database: sample_docker_production
+  database: sleepdays_production
+

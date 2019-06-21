@@ -1,0 +1,114 @@
+<% provide :title, "Recovery Eye Pillow (リカバリーアイピロー) | Sleepdays" %>
+<% provide :description, "着用することで特許取得のA.A.TH繊維がやさしく包み込みます。しっかりと休息したい際などにオススメのアイピローです。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "Recovery Eye Pillow (リカバリーアイピロー) | Sleepdays" %>
+<% provide :og_description, "着用することで特許取得のA.A.TH繊維がやさしく包み込みます。しっかりと休息したい際などにオススメのアイピローです。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "Recovery Eye Pillow (リカバリーアイピロー) | Sleepdays"%>
+<% provide :twitter_description, "着用することで特許取得のA.A.TH繊維がやさしく包み込みます。しっかりと休息したい際などにオススメのアイピローです。" %>
+
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+      ------------------------------------------>
+      <%
+        add_breadcrumb "TOP",    root_path
+        add_breadcrumb "PRODUCTS", products_path
+        add_breadcrumb "Recovery Eye Pillow", recovery_eye_pillow_path
+      %>
+      <!-- End Breadcrumb
+      ------------------------------------------>
+      <%= render "breadcrumbs" %>
+
+    <!-- Product Single
+    ------------------------------------------>
+    <section class="sect">
+      <div class="sect_inner sect_mdl">
+        <div class="product_sgl row">
+          <div class="product_sgl_img">
+            <ul class="product_slider">
+              <li class="slider_item"><%= image_tag("/images/products/rep/product_rep01.png", alt: "Recovery Eye Pillow") %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rep/product_rep02.png", alt: "Recovery Eye Pillow") %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rep/product_rep03.png", alt: "Recovery Eye Pillow") %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rep/product_rep04.png", alt: "Recovery Eye Pillow") %></li>
+            </ul>
+            <button class="product_slider_prev"></button>
+            <button class="product_slider_next"></button>
+          </div>
+          <div class="product_sgl_cont">
+            <h1 class="product_heading heading fs_8 fw_5">Recovery Eye Pillow</h1>
+            <p class="product_subheading fw_4">疲労が溜まりがちな目の周りの、リカバリータイムに</p>
+            <p class="product_txt">特許取得のA.A.TH®繊維で程よい弾力がひとりひとりの瞼にフィットし、目を酷使する現代人の瞼を優しく包み込みます。</p>
+            <div class="product_price fs_4 fw_5">¥ 5,980 + Tax
+              <span class="product_option fs_2 fw_3">Color : Navy / Size : Free</span>
+            </div>
+            <a class="product_btn" target="_blank" href="https://store.two2.jp/recovery-eye-pillow">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bl_l"></div>
+    <section class="sect bg_g">
+      <div class="sect_inner sect_sml ctr">
+        <div class="product_sgl_feature">
+          <h3 class="heading fs_7 fw_5">USE “A.A.TH®”</h3>
+          <p class="product_feature_cont">A.A.TH®繊維は特許技術を用いて製造された、ナノレベルの鉱物を特殊配合した機能性繊維です。繊維に含まれる微小な貴金属が身体から発する熱などのエネルギーに反応します。</p>
+          <a class="btn_arrow btn_more" href="/about">DISCOVER</a>
+        </div>
+      </div>
+    </section>
+    <div class="bl_m"></div>
+    <section class="sect">
+      <div class="sect_inner sect_mdl">
+        <div class="product_sgl_feature">
+          <div class="feature_item row">
+            <div class="feature_item_col feature_txt">
+              <h2 class="feature_heading heading fs_7 fw_5">TO GENTLY WRAP</h2>
+              <p class="product_feature_cont">休息中、長時間付けていてもストレスを感じにくいよう、面ファスナー式を採用しています。ゴムを使用していないため頭部を圧迫することがありません。また、跡がついにくいため移動中などでも使用しやすくなっています。</p>
+            </div>
+            <div class="feature_item_col">
+              <%= image_tag("/images/products/rep/feature_rep01.jpg", class: "feature_img") %>
+            </div>
+          </div>
+          <div class="feature_item row">
+            <div class="feature_item_col feature_txt">
+              <h2 class="feature_heading heading fs_7 fw_5">GENTLE TOUCH</h2>
+              <p class="product_feature_cont">肌に触れる生地は、綿で作られたベロア素材を使用しています。程よい毛足が肌に気持ち良く触れ、リラックスを促します。また、内部には低反発クッションを採用し、ひとりひとりの目の形状に優しくフィットします</p>
+            </div>
+            <div class="feature_item_col">
+                <%= image_tag("/images/products/rep/feature_rep02.jpg", class: "feature_img") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bl_l"></div>
+    <section class="sect bg_g">
+      <div class="sect_inner sect_sml">
+        <div class="product_sgl_feature">
+          <h4 class="heading fs_4 fw_6 ctr">FEATURES</h4>
+          <div class="feature_detail row">
+            <dl class="feature_detail_col">
+              <dt class="detail_name heading fw_5">COMPOSITION</dt>
+              <dd class="detail_txt">本体 : 綿 70％ / ポリエステル 30％, ゴム部分 : ポリエステル 100％</dd>
+              <dt class="detail_name heading fw_5">COUNTRY</dt>
+              <dd class="detail_txt">日本</dd>
+            </dl>
+            <dl class="feature_detail_col">
+              <dt class="detail_name heading fw_5">DETAIL</dt>
+              <dd class="detail_txt">身丈・着丈 : 65cm</dd>
+
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%= render "novelties" %>
+    <%= render "column_news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

@@ -1,0 +1,27 @@
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <h1>Sign up</h1>
+    <%= form_for [:admin,@user] do |f| %>
+        <div>
+            <%= f.label :email, "Email" %>
+            <%= f.email_field :email %>
+        </div>
+        <div>
+            <%= f.label :password,"Password" %>
+            <%= f.password_field :password %>
+        </div>
+        <div>
+            <%= f.label :password_confirmation, "password_confirmation" %>
+            <%= f.password_field :password_confirmation %>
+        </div>
+
+        <%= f.submit "Sign UP" ,class:"btn_send" %>
+    <% end %>
+
+  </div>
+</div>
+  <!-- End Wrapper
+  ------------------------------------------>

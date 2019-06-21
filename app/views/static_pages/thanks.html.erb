@@ -1,0 +1,43 @@
+<% provide :title, "お問い合わせ | Sleepdays" %>
+<% provide :description, "Sleepdaysに関するご質問を受け付ける法人様向けのページです。商品やサービスなど何かご質問等ございましたらお気軽にこちらからお問合せください。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "お問い合わせ | Sleepdays" %>
+<% provide :og_description, "Sleepdaysに関するご質問を受け付ける法人様向けのページです。商品やサービスなど何かご質問等ございましたらお気軽にこちらからお問合せください。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "お問い合わせ | Sleepdays" %>
+<% provide :twitter_description, "Sleepdaysに関するご質問を受け付ける法人様向けのページです。商品やサービスなど何かご質問等ございましたらお気軽にこちらからお問合せください。" %>
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "THANK YOU"
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+
+    <!-- Thank You
+    ------------------------------------------>
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml ctr">
+        <h1 class="heading fs_8 fw_5">THANK YOU</h1>
+        <p class="multi_cont">お問い合わせを受け付けました。<br>ご記入いただいた情報は無事に送信されました。確認のため、お客様に自動返信メールをお送りしております。</p>
+        <div class="multi_link ctr">
+          <a class="btn_arrow_back" href="/">BACK TO TOP</a>
+        </div>
+      </div>
+    </section>
+    <!-- End Thank You
+    ------------------------------------------>
+    <%= render "buy_now" %>
+    <%= render "column_news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

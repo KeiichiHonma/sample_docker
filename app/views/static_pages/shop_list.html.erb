@@ -1,0 +1,235 @@
+<% provide :title, "取扱店舗一覧 | Sleepdays" %>
+<% provide :description, "Sleepdaysの取扱店舗一覧をご紹介いたします。東急ハンズやルミネ、西武、マルイ、そごうといった大手百貨店でも購入できます。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "取扱店舗一覧 | Sleepdays" %>
+<% provide :og_description, "Sleepdaysの取扱店舗一覧をご紹介いたします。東急ハンズやルミネ、西武、マルイ、そごうといった大手百貨店でも購入できます。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "取扱店舗一覧 | Sleepdays" %>
+<% provide :twitter_description, "Sleepdaysの取扱店舗一覧をご紹介いたします。東急ハンズやルミネ、西武、マルイ、そごうといった大手百貨店でも購入できます。" %>
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "SHOP LIST", shop_list_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+
+    <!-- Shop List
+    ------------------------------------------>
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml ctr">
+        <h1 class="heading_nohero fs_8 fw_5">SHOP LIST</h1>
+      </div>
+      <div class="sect_inner sect_sml">
+        <ul class="shoplist_accordion accordion">
+          <li class="accordion_item">
+            <p class="accordion_item_name fw_5">関東（東京）</p>
+            <ul class="accordion_item_cont">
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">東急ハンズ 新宿店</dt>
+                  <dd class="shop_add">〒151-0051<br>東京都渋谷区千駄ヶ谷5-24-2 タイムズスクエアビル</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/G9Zuw3adUeK2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen グランスタ丸の内店</dt>
+                  <dd class="shop_add">〒100-0005<br>東京都千代田区丸の内1-9-1 グランスタ丸の内 B1F 改札外</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/B67NdTbPxKt" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">BiOPLE tokyo（ビープル トーキョー）ルミネエスト新宿店</dt>
+                  <dd class="shop_add">〒160-0022<br>東京都新宿区新宿3-38-1 ルミネエスト新宿 B2F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/XCGhifsijqA2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen 錦糸町テルミナ2店</dt>
+                  <dd class="shop_add">〒130-0013<br>東京都墨田区錦糸1-2-47 錦糸町テルミナ2 1F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/1rvCC8T5ANP2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen ルミネ荻窪店</dt>
+                  <dd class="shop_add">〒167-0043<br>東京都杉並区上荻1-7-1 ルミネ荻窪店 1F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/CCbuPfzzPi82" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen 西武池袋本店</dt>
+                  <dd class="shop_add">〒171-0022<br>東京都豊島区南池袋1-28-1 西武池袋本店 B1F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/SSTpBEJb4zx" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen 町田マルイ店</dt>
+                  <dd class="shop_add">〒194-0013<br>東京都町田市原町田6-1-6 町田マルイ 3F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/wPVTJAFvnS72" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">トレーニングピット 西武池袋店</dt>
+                  <dd class="shop_add">〒171-0022<br>東京都豊島区南池袋1-28-1 西武池袋本店 8Fスポーツ</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/dUhJWaQDj2u" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">京王新宿店 スポーツサポートコーナー</dt>
+                  <dd class="shop_add">〒160-8321<br>東京都新宿区西新宿1-1-4 京王百貨店 新宿店 5Fスポーツ</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/TKpgkG5T5R12" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">GlamBeautique+（グラムビューティークプラス）</dt>
+                  <dd class="shop_add">〒180-0004<br>東京都武蔵野市吉祥寺本町2-26-10</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/XDy4gsjn91Q2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </li>
+          <li class="accordion_item">
+            <p class="accordion_item_name fw_5">関東（東京以外）</p>
+            <ul class="accordion_item_cont">
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen アトレ川崎店</dt>
+                  <dd class="shop_add">〒210-0007<br>神奈川県川崎市川崎区駅前本町26-1 3F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/LeZNqtLtFLr" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen 横浜相鉄ジョイナス店</dt>
+                  <dd class="shop_add">〒220-0005<br>神奈川県横浜市西区南幸1-5-1 相鉄ジョイナス 2F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/ATXXvYqXpR82" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen ラスカ小田原店</dt>
+                  <dd class="shop_add">〒250-0011<br>神奈川県小田原市栄町1-1-9 ラスカ小田原 3F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/1pZaDL5FhFC2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen ルミネ大宮1店</dt>
+                  <dd class="shop_add">〒330-0853<br>埼玉県さいたま市大宮区錦町630 ルミネ大宮店ルミネ1 2F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/6XpCmCzXU282" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">トレーニングピット そごう大宮店</dt>
+                  <dd class="shop_add">〒330-9530<br>埼玉県さいたま市大宮区桜木町1-6-2 そごう大宮店 6Fスポーツ</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/nFS2xZZSWjw" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">トレーニングピット そごう横浜店</dt>
+                  <dd class="shop_add">〒220-8510<br>神奈川県横浜市西区高島2-18-1 そごう横浜店 8Fスポーツ</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/ucLVgCQpadS2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </li>
+          <li class="accordion_item">
+            <p class="accordion_item_name fw_5">中部</p>
+            <ul class="accordion_item_cont">
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen 金沢百番街Rinto店</dt>
+                  <dd class="shop_add">〒920-0858<br>石川県金沢市木ノ新保町1-1 金沢百番街Rinto店 1F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/SB6oBg1wBQT2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen タカシマヤ ゲートタワーモール店</dt>
+                  <dd class="shop_add">〒450-0002<br>愛知県名古屋市中村区名駅1-1-3 タカシマヤ ゲートタワーモール B1F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/2hfRE5HBn2U2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </li>
+          <li class="accordion_item">
+            <p class="accordion_item_name fw_5">近畿</p>
+            <ul class="accordion_item_cont">
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen ルクア大阪店</dt>
+                  <dd class="shop_add">〒530-8558<br>大阪府大阪市北区梅田3-1-3 ノースゲートビルディング B1F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/99CzG8dKHyG2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen なんばマルイ店</dt>
+                  <dd class="shop_add">〒542-0076<br>大阪府大阪市中央区難波3-8-9 なんばマルイ店 1F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/oDG24NR3D3p" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen 京都 the CUBE店</dt>
+                  <dd class="shop_add">〒600-8216<br>京都府京都市下京区烏丸通塩小路下東塩小路町901 京都駅ビル 京都 the CUBE B2F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/rAhKdiFHJBx" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </li>
+          <li class="accordion_item">
+            <p class="accordion_item_name fw_5">中国・四国</p>
+            <ul class="accordion_item_cont">
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen エキエ広島店</dt>
+                  <dd class="shop_add">〒732-0822<br>広島県広島市南区松原町1-2 エキエ2F</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/3B1qUmeLm6L2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </li>
+          <li class="accordion_item">
+            <p class="accordion_item_name fw_5">九州</p>
+            <ul class="accordion_item_cont">
+              <li class="shop_item">
+                <dl class="shop_cont">
+                  <dt class="shop_name">Biople by CosmeKitchen 天神地下街店</dt>
+                  <dd class="shop_add">〒810-0001<br>福岡県福岡市中央区天神2 地下2号東4番街221</dd>
+                  <dd class="shop_link"><a class="fw_5" href="https://goo.gl/maps/3we5Erzie5J2" target="_blank">MAP</a></dd>
+                </dl>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Shop List
+    ------------------------------------------>
+
+    <%= render "buy_now" %>
+    <%= render "column_news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

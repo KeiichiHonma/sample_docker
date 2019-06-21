@@ -1,0 +1,39 @@
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",     root_path
+      add_breadcrumb "管理画面TOP",    admin_home_path
+      add_breadcrumb "管理画面NEWS一覧",    admin_news_index_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+    <!-- Article
+    ------------------------------------------>
+
+    <h1>Admin News Page</h1>
+    <h2><%= current_user.email %></h2>
+    <ul>
+      <%= link_to "新規投稿", new_admin_news_path %>
+      <% @news.each do |news| %>
+        <li>
+          No : <%= news.id %>, date : <%= news.news_created_at ||= "no date" %>, title : <%= news.title %>
+          <%= link_to "詳細", admin_news_path(news) %>
+          <%= link_to "編集", edit_admin_news_path(news) %>
+        </li>
+      <% end %>
+    </ul>
+    <%= paginate @news %>
+    <%= link_to "管理トップへ戻る", admin_home_path %>
+    <!-- END Article
+    ------------------------------------------>
+
+  </div>
+</div>
+  <!-- End Wrapper
+  ------------------------------------------>

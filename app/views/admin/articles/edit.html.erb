@@ -1,0 +1,33 @@
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "管理画面TOP",    admin_home_path
+      add_breadcrumb "管理画面COLUMN一覧", admin_articles_path
+      add_breadcrumb "COLUMN編集 : " + @article.title, @article
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+    <!-- Form
+    ------------------------------------------>
+
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml ctr">
+        <h1 class="heading_nohero fs_8 fw_5">COLUMN編集</h1>
+      </div>
+      <%= render "article_form"%>
+    </section>
+    <!-- END Form
+    ------------------------------------------>
+
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

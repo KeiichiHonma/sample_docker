@@ -1,0 +1,151 @@
+<% provide :title, "Sleepdaysの商品一覧 | Sleepdays" %>
+<% provide :description, "Sleepdaysの商品一覧です。Sleepdaysブランドの商品をご紹介します。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "Sleepdaysの商品一覧 | Sleepdays" %>
+<% provide :og_description, "Sleepdaysの商品一覧です。Sleepdaysブランドの商品をご紹介します。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "Sleepdaysの商品一覧 | Sleepdays" %>
+<% provide :twitter_description, "Sleepdaysの商品一覧です。Sleepdaysブランドの商品をご紹介します。" %>
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Hero
+    ------------------------------------------>
+    <section class="hero hero_product">
+      <div class="hero_cont">
+        <div class="hero_txt">
+          <span class="hero_subheading fs_2">All items of Sleepdays.</span>
+          <h1 class="heading fs_8">PRODUCTS</h1>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero
+    ------------------------------------------>
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "PRODUCTS", products_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+
+    <!-- Product All
+    ------------------------------------------>
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner ctr">
+        <h2 class="heading fs_8 fw_5">RECOVERY WEAR</h2>
+        <ul class="product_all row">
+          <li class="product_all_col">
+            <a href="/products/recovery-leg-fit">
+              <div class="product_all_img">
+                <%= image_tag("/images/products/rlf/product_rlf01.png", alt: "Recovery Leg Fit") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Leg Fit</p>
+              <span class="product_memo">疲れがちなふくらはぎを集中リカバリー</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+          <li class="product_all_col">
+            <a href="/products/recovery-leggings">
+              <div class="product_all_img">
+                <%= image_tag("/images/products/rl/product_rl01.png", alt: "Recovery Leggings") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Leggings</p>
+              <span class="product_memo">巡りを良くして下半身の冷えなどをリカバリー</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+          <li class="product_all_col">
+            <a href="/products/recovery-short-sleeve-tshirt">
+              <div class="product_all_img">
+                <%= image_tag("/images/products/rsst/product_rsst01.png", alt: "Recovery Short Sleeve T-Shirt") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Short Sleeve T-Shirt</p>
+              <span class="product_memo">着心地と使いやすさを両立させた高機能Tシャツ</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+          <li class="product_all_col">
+            <a href="/products/recovery-long-sleeve-tshirt">
+              <div class="product_all_img">
+                <%= image_tag("/images/products/rlst/product_rlst01.png", alt: "Recovery Long Sleeve T-Shirt") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Long Sleeve T-Shirt</p>
+              <span class="product_memo">着心地と機能性を両立させたロングスリーブTシャツ</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+          <li class="product_all_col">
+            <a href="/products/recovery-cloth">
+              <div class="product_all_img">
+                <%= image_tag("/images/products/rcl/product_rcl01.png", alt: "Recovery Cloth") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Cloth</p>
+              <span class="product_memo">肌触りと機能性を両立させたクロス</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+          <li class="product_all_col">
+            <a href="/products/recovery-eye-pillow">
+              <div class="product_all_img">
+                <%= image_tag("/images/products/rep/product_rep01.png", alt: "Recovery Eye Pillow") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Eye Pillow</p>
+              <span class="product_memo">疲労が溜まりがちな目の周りの、リカバリータイムに</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+          <li class="product_all_col">
+            <a href="/products/recovery-multi-wear">
+              <div class="product_all_img">
+                <%= image_tag("/images/products/rmw/product_rmw01.png", alt: "Recovery Multi-Wear") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Multi-Wear</p>
+              <span class="product_memo">首やお腹、腰などの様々な箇所に活用できるマルチウェア</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="bl_m"></div>
+    <section class="sect">
+      <div class="sect_inner ctr">
+        <h2 class="heading fs_8 fw_5">RECOVERY AMENITY</h2>
+        <ul class="product_all row row_ctr">
+          <li class="product_all_col">
+            <a href="/products/recovery-room-aroma-mist">
+              <div class="product_all_img">
+                <%= image_tag("/images/products/rram/product_rram01.png", alt: "Recovery Room Aroma Mist") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Room Aroma Mist</p>
+              <span class="product_memo">リカバリールーティンをつくるアロマミスト</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+          <li class="product_all_col">
+            <a href="/products/bathtime-drink">
+              <div class="product_all_img">
+                <%= image_tag("/images/products/bdba/product_bdba01.png", alt: "Bathtime Drink Before & After") %>
+              </div>
+              <p class="heading fs_5 fw_4">Bathtime Drink Before & After</p>
+              <span class="product_memo">入浴前から始まる、リカバリードリンクセット</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Product All
+    ------------------------------------------>
+    <%= render "column_news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

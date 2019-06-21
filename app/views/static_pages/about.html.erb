@@ -1,0 +1,76 @@
+<% provide :title, "リカバリーブランドSleepdaysとは？ | Sleepdays" %>
+<% provide :description, "Sleepdaysは、リカバリーという能力が秘めるライフスタイルへの影響力の大きさに着目し、独自の技術と科学的な理論に基づいた確かなコンセプトを軸に、リカバリーの鍵となる血流と睡眠を中心にアプローチすることで、その能力を最大にし、濃密で充実した一日を創り出す最適解を提供していきます。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "リカバリーブランドSleepdaysとは？ | Sleepdays" %>
+<% provide :og_description, "Sleepdaysは、リカバリーという能力が秘めるライフスタイルへの影響力の大きさに着目し、独自の技術と科学的な理論に基づいた確かなコンセプトを軸に、リカバリーの鍵となる血流と睡眠を中心にアプローチすることで、その能力を最大にし、濃密で充実した一日を創り出す最適解を提供していきます。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "リカバリーブランドSleepdaysとは？ | Sleepdays" %>
+<% provide :twitter_description, "Sleepdaysは、リカバリーという能力が秘めるライフスタイルへの影響力の大きさに着目し、独自の技術と科学的な理論に基づいた確かなコンセプトを軸に、リカバリーの鍵となる血流と睡眠を中心にアプローチすることで、その能力を最大にし、濃密で充実した一日を創り出す最適解を提供していきます。" %>
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Hero
+    ------------------------------------------>
+    <section class="hero hero_about">
+      <div class="hero_cont">
+        <div class="hero_txt">
+          <span class="hero_subheading fs_2">The principles listed by Sleepdays.</span>
+          <h1 class="heading fs_8">ABOUT</h1>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero
+    ------------------------------------------>
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "ABOUT", about_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+
+    <!-- Concept
+    ------------------------------------------>
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml ctr">
+        <h2 class="heading fs_8 fw_5">CONCEPT</h2>
+        <p class="concept_cont">リカバリー、それは単に、疲れを癒やしたり症状や機能の回復を意味している言葉ではありません。人々が生活したり、働いたり、学んだり、また遊んだりと、社会に参加できるプロセスと結果を意味し、社会的役割の取得や人との繋がり、そして意味のある人生の達成、またそれに向かって希望を持つことなど幅広い概念を含みます。<br><br>Sleepdaysは、リカバリーという能力が持つライフスタイルへの影響力の大きさに着目し、独自の技術と科学的な理論に基づき、リカバリーの鍵となる血流と睡眠からのアプローチを中心に、その能力を最大にし、濃密で充実した一日を創り出す最適解を提供していきます。</p>
+      </div>
+    </section>
+    <!-- End Concept
+      ------------------------------------------>
+    <!-- Speciality
+      ------------------------------------------>
+    <div id="spe" class="bl_m"></div>
+    <section class="sect">
+      <div class="sect_inner">
+        <h2 class="heading fs_8 fw_5 ctr">SPECIALITY</h2>
+        <div class="about row">
+          <div class="about_col">
+              <%= image_tag("/images/about_spe01.jpg", alt: "USE “A.A.TH®",class: "about_img") %>
+            <h3 class="heading fs_6 fw_5 ctr">USE “A.A.TH®”</h3>
+            <p class="about_cont">技術特許を用いて、ナノレベルの貴金属を配合して製造された繊維「A.A.TH®」が、身体から発する熱などのエネルギーを吸収・変換し、人体へやさしい幅広い波長で再放します。</p>
+          </div>
+          <div class="about_col">
+            <%= image_tag("/images/about_spe02.jpg", alt: "MADE IN JAPAN",class: "about_img") %>
+            <h3 class="heading fs_6 fw_5 ctr">MADE IN JAPAN</h3>
+            <p class="about_cont">縫製から梱包までを国内で行っています。一つ一つの作業を職人が手作業で行うことで、非常に優れた品質と機能性を実現しています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Speciality
+    ------------------------------------------>
+    <%= render "novelties" %>
+    <%= render "buy_now" %>
+    <%= render "column_news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

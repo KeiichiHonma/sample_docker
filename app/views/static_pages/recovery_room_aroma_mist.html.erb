@@ -1,0 +1,107 @@
+<% provide :title, "Recovery Room Aroma Mist (リカバリーアロマミスト) | Sleepdays" %>
+<% provide :description, "リカバリーアロマルームミストは、良質な香りのリラックス空間を演出し、気持ちが安らぐ習慣づくりをサポートをします。 習慣を身にけるためには、2 ～ 3 ヶ月その行為を継続することが大切だと言われています。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "Recovery Room Aroma Mist (リカバリーアロマミスト) | Sleepdays" %>
+<% provide :og_description, "リカバリーアロマルームミストは、良質な香りのリラックス空間を演出し、気持ちが安らぐ習慣づくりをサポートをします。 習慣を身にけるためには、2 ～ 3 ヶ月その行為を継続することが大切だと言われています。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "Recovery Room Aroma Mist (リカバリーアロマミスト) | Sleepdays"%>
+<% provide :twitter_description, "リカバリーアロマルームミストは、良質な香りのリラックス空間を演出し、気持ちが安らぐ習慣づくりをサポートをします。 習慣を身にけるためには、2 ～ 3 ヶ月その行為を継続することが大切だと言われています。" %>
+
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "PRODUCTS", products_path
+      add_breadcrumb "Recovery Room Aroma Mist", recovery_room_aroma_mist_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+
+    <!-- Product Single
+    ------------------------------------------>
+    <section class="sect">
+      <div class="sect_inner sect_mdl">
+        <div class="product_sgl row">
+          <div class="product_sgl_img">
+            <ul class="product_slider">
+              <li class="slider_item"><%= image_tag("/images/products/rram/product_rram01.png",alt: "Recovery Room Aroma Mist" ) %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rram/product_rram02.png",alt: "Recovery Room Aroma Mist" ) %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rram/product_rram03.png",alt: "Recovery Room Aroma Mist" ) %></li>
+            </ul>
+            <button class="product_slider_prev"></button>
+            <button class="product_slider_next"></button>
+          </div>
+          <div class="product_sgl_cont">
+            <h1 class="product_heading heading fs_8 fw_5">Recovery Room Aroma Mist</h1>
+            <p class="product_subheading fw_4">リカバリールーティンをつくるアロマミスト</p>
+            <p class="product_txt">良質な香りのリラックス空間を演出し、気持ちが安らぐ習慣づくりをサポートをします。</p>
+            <div class="product_price fs_4 fw_5">¥ 2,300 + Tax
+              <span class="product_option fs_2 fw_3">Flavor : オーガニックラベンダー＆スイートオレンジ、オーガニックピンクグレープフルーツ＆セージ</span>
+            </div>
+            <!-- <div class="product_check">
+              <div class="check_item">
+                <input type="radio" name="sex" value="" checked>オーガニックラベンダー＆スイートオレンジ<br>
+                <input type="radio" name="sex" value="">オーガニックピンクグレープフルーツ＆セージ
+              </div>
+            </div> -->
+            <a class="product_btn" target="_blank" href="https://store.two2.jp/recovery-aroma-room-mist">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bl_l"></div>
+    <section class="sect bg_g">
+      <div class="sect_inner sect_sml ctr">
+        <div class="product_sgl_feature no_link">
+          <h3 class="heading fs_7 fw_5">Australian Certified Organic</h3>
+          <p class="product_feature_cont">世界的にも厳しい認定基準を持ったオーガニック認定機関ACOの認定を受けている、オーストラリアの化粧品製造会社でリカバリーアロマルームミストを製造しています。リカバリーアロマルームミストの成分中の水以外は、ACO認定オーガニック原料を使用し、100％天然由来成分・防腐剤不使用。</p>
+        </div>
+      </div>
+    </section>
+    <div class="bl_m"></div>
+    <section class="sect">
+      <div class="sect_inner sect_mdl">
+        <div class="product_sgl_feature">
+          <div class="feature_item row item_mist">
+            <div class="feature_item_col">
+              <%= image_tag("/images/products/rram/feature_rram01.jpg",class: "feature_img" ) %>
+              <h2 class="feature_heading heading fs_6 fw_5 ctr">ORGANIC LAVENDER & SWEET ORANGE</h2>
+              <p class="product_feature_cont">精油の成分として人気の高い酢酸リナリルやリナロールを40％近く含む一方で、刺激作用のあるカンファーがほぼ0％の質の高いラベンダーと、d-リモネンという、柑橘系の香りの成分を含むスイートオレンジを配合しています。ラベンダーとスイートオレンジのブレンドは、リラックス時に有用であるブレンドです。</p>
+              <dl class="product_feature_detail">
+                <dt class="detail_name heading fw_5">COMPOSITION</dt>
+                <dd class="detail_txt">水 / エタノール*（サトウキビ由来） / グリセリン* / ラベンダー油* / スイートオレンジ油*<br>* : ACO認定オーガニック成分</dd>
+                <dt class="detail_name heading fw_5">COUNTRY</dt>
+                <dd class="detail_txt">オーストラリア</dd>
+                <dt class="detail_name heading fw_5">CAPACITY</dt>
+                <dd class="detail_txt">100ml</dd>
+              </dl>
+            </div>
+            <div class="feature_item_col">
+              <%= image_tag("/images/products/rram/feature_rram02.jpg",class: "feature_img" ) %>
+              <h2 class="feature_heading heading fs_6 fw_5 ctr">ORGANIC PINK GRAPEFRUIT & SAGE</h2>
+              <p class="product_feature_cont">瑞々しく爽やかで落ち着いた香りの元となることから睡眠前などに有用と言われるd-リモネンを含む、ピンクグレープフルーツと、バランスに良いとされるα-ツヨンを含むセージを配合しています。グレープフルーツの学名の「paradisi」は「パラダイス」を意味し、楽園・明るい未来を、セージの学名である「Salvia」は「癒す」という意味があり、嫌な夢・現実に対し気分をすっきりさせる「浄化作用」を彷彿とさせ、今日の出来事を浄化し、明るい明日を迎えるためのブレンドです。</p>
+              <dl class="product_feature_detail">
+                <dt class="detail_name heading fw_5">COMPOSITION</dt>
+                <dd class="detail_txt">水 / エタノール*（サトウキビ由来） / グリセリン* / ピンクグレープフルーツ油* / セージ葉油*<br>* : ACO認定オーガニック成分</dd>
+                <dt class="detail_name heading fw_5">COUNTRY</dt>
+                <dd class="detail_txt">オーストラリア</dd>
+                <dt class="detail_name heading fw_5">CAPACITY</dt>
+                <dd class="detail_txt">100ml</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%= render "novelties" %>
+    <%= render "column_news" %>
+    </div>
+  </div>
+  <!-- End Wrapper
+------------------------------------------>

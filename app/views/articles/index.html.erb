@@ -1,0 +1,101 @@
+<% provide :title, "コラム一覧 | Sleepdays" %>
+<% provide :description, "Sleepdaysのコラムページです。Sleepdaysに関するコラムをお届けいたします。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "コラム一覧 | Sleepdays" %>
+<% provide :og_description, "Sleepdaysのコラムページです。Sleepdaysに関するコラムをお届けいたします。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "コラム一覧 | Sleepdays" %>
+<% provide :twitter_description, "Sleepdaysのニュースページです。Sleepdaysに関するコラムをお届けいたします。" %>
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",  root_path
+      add_breadcrumb "COLUMN", articles_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+    <!-- News
+    ------------------------------------------>
+
+    <!-- Column
+    ------------------------------------------>
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect">
+        <h1 class="heading_nohero fs_8 fw_5 ctr">COLUMN</h1>
+        <% if @latest_articles.present? %>
+        <ul class="column row">
+          <% @latest_articles.each do |article| %>
+          <li class="column_item_col">
+            <a href="/articles/<%= article.id %>">
+              <div class="column_img" style="background-image: url(<%= Rails.public_path + "/images/articles/#{article.id}/1.jpg" %>)"></div>
+              <p class="column_heading"><%= article.title %></p>
+            </a>
+          </li>
+          <% end %>
+        </ul>
+        <% else %>
+        <ul class="column row">
+          <li class="column_item_col">
+            <a href="javascript:void(0)">
+              <p class="column_heading">現在表示できる項目がございません。</p>
+            </a>
+          </li>
+        </ul>
+        <% end %>
+
+
+        <!-- <ul class="column row">
+          <li class="column_item_col">
+            <a href="/articles/514">
+              <div class="column_img" style="background-image: url(<%= asset_path "hero_buy01.jpg" %>)"></div>
+              <p class="column_heading">Sleepdaysで体全体をリカバリー</p>
+            </a>
+          </li>
+          <li class="column_item_col">
+            <a href="/articles/515">
+              <div class="column_img" style="background-image: url(<%= Rails.public_path + '/images/articles/515/3.jpg' %>)"></div>
+              <p class="column_heading">Sleepdaysの素材へのこだわり</p>
+            </a>
+          </li>
+          <li class="column_item_col">
+            <a href="/articles/516">
+              <div class="column_img" style="background-image: url(<%= Rails.public_path + '/images/articles/516/1.jpg' %>)"></div>
+              <p class="column_heading">ピンクのリカバリーレッグフィットが11月に発売予定！</p>
+            </a>
+          </li>
+        </ul> -->
+
+        <!-- <ol class="archive_footer">
+          <li class="archive_prev">
+            <a href="#"></a>
+          </li>
+          <li class="archive_num">
+            <a class="current_num" href="#">1</a>
+          </li>
+          <li class="archive_num">
+            <a href="#">2</a>
+          </li>
+          <li class="archive_num">
+            <a href="#">3</a>
+          </li>
+          <li class="archive_next">
+            <a href="#"></a>
+          </li>
+        </ol> -->
+      </div>
+    </section>
+    <!-- End Column
+    ------------------------------------------>
+
+    <%= render "buy_now" %>
+    <%= render "news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

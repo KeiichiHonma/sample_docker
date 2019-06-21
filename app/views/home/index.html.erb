@@ -1,1 +1,138 @@
-123555
+<% provide :title, t("common_title") %>
+<% provide :description, t("common_description") %>
+<% provide :og_type, "website" %>
+<% provide :og_title, t("common_description") %>
+<% provide :og_description, t("common_description") %>
+<% provide :og_url, request.url %>
+<% provide :twitter_card, "summary" %>
+<% provide :twitter_title, t("common_description") %>
+<% provide :twitter_description, t("common_description") %>
+
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Hero
+    ------------------------------------------>
+    <section class="top_hero">
+      <div class="hero_img"></div>
+      <div class="hero_cont">
+        <div class="hero_txt">
+          <h1 class="hero_heading">
+            <picture>
+              <source media="(min-width: 768px)" srcset="/images/catchcopy_pc.svg">
+                <%= image_tag("/images/catchcopy_sp.svg", alt: "Sleepdays") %>
+            </picture>
+          </h1>
+          <span class="hero_subheading fs_2">Sleepdays change your life.</span>
+          <a class="btn_hero btn_arrow" href="/about">DISCOVER</a>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero
+    ------------------------------------------>
+
+    <!-- Section CONCEPT
+    ------------------------------------------>
+    <div class="bl_s bg_w"></div>
+    <section class="sect bg_w">
+      <div class="sect_inner">
+        <ul class="top_about_img row">
+          <li class="about_img_col">
+            <%= image_tag("top_about01.jpg", :alt => "Recovery eye Pillow") %>
+          </li>
+          <li class="about_img_col">
+            <%= image_tag("top_about02.jpg", :alt => "Recovery Leg fit") %>
+          </li>
+        </ul>
+      </div>
+      <div class="sect_inner sect_sml ctr">
+        <div class="sect_header">
+          <h2 class="heading fs_8 fw_5">CONCEPT</h2>
+        </div>
+        <p class="top_about_cont">Sleepdaysは独自の技術と科学的な理論に基づいた確かなコンセプトを軸に、リカバリーの鍵となる血流と睡眠を中心にアプローチすることで、その能力を最大にし、濃密で充実した一日を創り出す最適解を提供していきます。</p>
+        <a class="btn_arrow btn_more" href="/about">DISCOVER</a>
+      </div>
+    </section>
+    <!-- End Section CONCEPT
+    ------------------------------------------>
+
+    <!-- Section Lineup
+    ------------------------------------------>
+    <div class="bl_m bg_w"></div>
+    <section class="sect bg_w">
+      <div class="sect_inner sect_mdl ctr">
+        <h3 class="heading fs_8 fw_5">LINEUP</h3>
+        <ul class="top_product_item row">
+          <li class="product_item_col">
+            <a href="/products/recovery-leg-fit">
+              <div class="product_item_img">
+                <%= image_tag("/images/products/rlf/product_rlf01.png", :alt => "Recovery Leg fit") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Leg Fit</p>
+              <span class="product_memo">疲れがちなふくらはぎを集中リカバリー</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+          <li class="product_item_col">
+            <a href="/products/recovery-leggings">
+              <div class="product_item_img">
+                <%= image_tag("/images/products/rl/product_rl01.png", :alt => "Recovery Leggings") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Leggings</p>
+              <span class="product_memo">巡りを良くして下半身の冷えなどをリカバリー</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+          <li class="product_item_col">
+            <a href="/products/recovery-short-sleeve-tshirt">
+              <div class="product_item_img">
+                <%= image_tag("/images/products/rsst/product_rsst01.png", :alt => "Recovery Short Sleeve T-Shirt") %>
+              </div>
+              <p class="heading fs_5 fw_4">Recovery Short Sleeve T-Shirt</p>
+              <span class="product_memo">着心地と使いやすさを両立させた高機能Tシャツ</span>
+              <span class="btn_arrow btn_more">View details</span>
+            </a>
+          </li>
+        </ul>
+        <a class="btn_arrow btn_more" href="/products">SEE MORE</a>
+      </div>
+    </section>
+    <!-- End Section Lineup
+    ------------------------------------------>
+
+    <!-- Section Banner
+------------------------------------------>
+    <div class="bl_l bg_w"></div>
+    <section class="sect bg_bnr">
+      <div class="sect_inner sect_mdl">
+        <div class="top_bnr">
+          <h3 class="top_bnr_heading fs_8">NEW ARRIVAL</h3>
+          <p class="top_bnr_cont">Recovery Leg FitにNewカラーが登場</p>
+          <a class="btn_top_bnr btn_arrow" href="/recovery-leg-fit">DISCOVER</a>
+        </div>
+      </div>
+    </section>
+    <!-- End Section Banner
+    ------------------------------------------>
+
+    <!-- Section Speciality
+------------------------------------------>
+    <section class="sect bg_spe">
+      <div class="sect_inner sect_mdl">
+        <div class="top_spe">
+          <h3 class="top_spe_heading fs_8">SPECIALITY</h3>
+          <p class="top_spe_cont">特許技術を用いた繊維や厳選されたオーガニック原料を使用し、<br>より良いライフスタイルへとサポート。</p>
+          <a class="btn_top_spe btn_arrow" href="/about#spe">DISCOVER</a>
+        </div>
+      </div>
+    </section>
+    <!-- End Section Speciality
+    ------------------------------------------>
+
+    <%= render "column_news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

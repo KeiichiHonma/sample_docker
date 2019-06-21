@@ -1,0 +1,66 @@
+<% provide :title, "#{@article.title} | Sleepdays" %>
+<% provide :description, truncate_description(@article.description) %>
+<% provide :og_type, "website" %>
+<% provide :og_title, @article.title + " | Sleepdays" %>
+<% provide :og_description, truncate_description(@article.description) %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, @article.title + " | Sleepdays" %>
+<% provide :twitter_description,  truncate_description(@article.description) %>
+<!-- Wrapper
+
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "COLUMN", articles_path
+      add_breadcrumb @article.title, @article
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+    <!-- Article
+    ------------------------------------------>
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml">
+        <div class="article">
+          <div class="article_date">
+            <%= @article.created_at.strftime('%b %m, %Y') %>
+          </div>
+          <h1 class="heading_article fs_6 fw_5"><%= @article.title %></h1>
+          <%= @article.description.html_safe %>
+          <div class="article_footer">
+            <div class="article_parentlink">
+              <%= link_to "BACK TO INDEX",articles_path, class: "btn_arrow_back" %>
+            </div>
+            <div class="article_pagination row">
+              <div class="pagination_col">
+                <% if @article.previous.present? %>
+                  <%= link_to "PREV", article_path(@article.previous), class: "btn_arrow_back"%>
+                <% end %>
+              </div>
+              <div class="pagination_col">
+                <% if @article.next.present? %>
+                  <%= link_to "NEXT",article_path(@article.next), class: "btn_arrow" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End Article
+    ------------------------------------------>
+    <% if(@article.id != 514 && @article.id != 515 && @article.id != 516) %>
+    <%= render "novelties" %>
+    <% end %>
+    <%= render "buy_now" %>
+    <%= render "news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

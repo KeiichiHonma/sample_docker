@@ -1,0 +1,123 @@
+<% provide :title, "Recovery Leg Fit (リカバリーレッグフィット) | Sleepdays" %>
+<% provide :description, "特許取得のA.A.TH繊維でふくらはぎをやさしく包み込み、非着圧の心地よさを体感できるレッグフィットです。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "Recovery Leg Fit (リカバリーレッグフィット) | Sleepdays" %>
+<% provide :og_description, "特許取得のA.A.TH繊維でふくらはぎをやさしく包み込み、非着圧の心地よさを体感できるレッグフィットです。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "Recovery Leg Fit (リカバリーレッグフィット) | Sleepdays"%>
+<% provide :twitter_description, "特許取得のA.A.TH繊維でふくらはぎをやさしく包み込み、非着圧の心地よさを体感できるレッグフィットです。" %>
+
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "PRODUCTS", products_path
+      add_breadcrumb "Recovery Leg Fit", recovery_leg_fit_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+
+    <!-- Product Single
+    ------------------------------------------>
+    <section class="sect">
+      <div class="sect_inner sect_mdl">
+        <div class="product_sgl row">
+          <div class="product_sgl_img">
+            <ul class="product_slider">
+              <li class="slider_item"><%= image_tag("/images/products/rlf/product_rlf01.png", alt: "Recovery Leg Fit") %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rlf/product_rlf02.png", alt: "Recovery Leg Fit") %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rlf/product_rlf03.png", alt: "Recovery Leg Fit") %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rlf/product_rlf04.png", alt: "Recovery Leg Fit") %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rlf/product_rlf05.png", alt: "Recovery Leg Fit") %></li>
+            </ul>
+            <button class="product_slider_prev"></button>
+            <button class="product_slider_next"></button>
+          </div>
+          <div class="product_sgl_cont">
+            <h1 class="product_heading heading fs_8 fw_5">Recovery Leg Fit</h1>
+            <p class="product_subheading fw_4">疲れがちなふくらはぎを集中リカバリー</p>
+            <p class="product_txt">特許取得のA.A.TH®繊維でふくらはぎをやさしく包み込み、非着圧の心地よさを体感できるレッグフィットです。</p>
+            <div class="product_price fs_4 fw_5">¥ 4,980 + Tax
+              <span class="product_option fs_2 fw_3">Color : Navy, Pink / Size : Free</span>
+            </div>
+            <a class="product_btn" target="_blank" href="https://store.two2.jp/recovery-leg-fit">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bl_l"></div>
+    <section class="sect bg_g">
+      <div class="sect_inner sect_sml ctr">
+        <div class="product_sgl_feature">
+          <h3 class="heading fs_7 fw_5">USE “A.A.TH®”</h3>
+          <p class="product_feature_cont">A.A.TH®繊維は特許技術を用いて製造された、ナノレベルの鉱物を特殊配合した機能性繊維です。繊維に含まれる微小な貴金属が身体から発する熱などのエネルギーに反応します。</p>
+          <a class="btn_arrow btn_more" href="/about#spe">DISCOVER</a>
+        </div>
+      </div>
+    </section>
+    <div class="bl_m"></div>
+    <section class="sect">
+      <div class="sect_inner sect_mdl">
+        <div class="product_sgl_feature">
+          <div class="feature_item row">
+            <div class="feature_item_col feature_txt">
+              <h2 class="feature_heading heading fs_7 fw_5">MAKE LEG LINE LOOK BEAUTIFUL</h2>
+              <p class="product_feature_cont">コンプレッション（着圧）ではないため、長時間着用しても跡が残りづらい仕上がりになっています。立体的な構造をしているリッチェル編みで製造し、締め付け感の少ないつけ心地を実現しました。</p>
+            </div>
+            <div class="feature_item_col">
+              <%= image_tag("/images/products/rlf/feature_rlf01.jpg",class: "feature_img" ) %>
+            </div>
+          </div>
+          <div class="feature_item row">
+            <div class="feature_item_col feature_txt">
+              <h2 class="feature_heading heading fs_7 fw_5">SEASONLESS</h2>
+              <p class="product_feature_cont">リッチェル編みを採用したことにより、一見、温かみに特化した印象がありますが、通気性の高いメッシュ構造のため、夏場でも汗などを気にせずご使用いただけます。</p>
+            </div>
+            <div class="feature_item_col">
+              <%= image_tag("/images/products/rlf/feature_rlf02.jpg",class: "feature_img" ) %>
+            </div>
+          </div>
+          <div class="feature_item row">
+            <div class="feature_item_col feature_txt">
+              <h2 class="feature_heading heading fs_7 fw_5">COLOR VARIATION</h2>
+              <p class="product_feature_cont">Sleepdays唯一のカラーバリエーション展開。淡い落ち着いた色合いのピンクで、ルームウェアのアクセントカラーに。</p>
+            </div>
+            <div class="feature_item_col">
+              <%= image_tag("/images/products/rlf/feature_rlf03.jpg",class: "feature_img" ) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bl_l"></div>
+    <section class="sect bg_g">
+      <div class="sect_inner sect_sml">
+        <div class="product_sgl_feature">
+          <h4 class="heading fs_4 fw_6 ctr">FEATURES</h4>
+          <div class="feature_detail row">
+            <dl class="feature_detail_col">
+              <dt class="detail_name heading fw_5">COMPOSITION</dt>
+              <dd class="detail_txt">綿 50% / ポリエステル 24% / ポリウレタン 24% / ナイロン 2%</dd>
+              <dt class="detail_name heading fw_5">COUNTRY</dt>
+              <dd class="detail_txt">日本</dd>
+            </dl>
+            <dl class="feature_detail_col">
+              <dt class="detail_name heading fw_5">DETAIL</dt>
+              <dd class="detail_txt">身丈 縦 : 38.5cm、横 : 10.5cm</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%= render "novelties" %>
+    <%= render "column_news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

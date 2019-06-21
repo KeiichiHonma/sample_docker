@@ -1,15 +1,235 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Docker</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<!doctype html>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="<%= yield :description %>">
+<title><%= yield :title %></title>
+<meta http-equiv="content-language" content="ja">
+<meta property="fb:app_id" content="">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="<%= yield :og_type %>" />
+<meta property="og:title" content="<%= yield :og_title %>" />
+<meta property="og:description" content="<%= yield :og_description %>" />
+<meta property="og:url" content="<%= yield :og_url %>" />
+<meta property="og:site_name" content="Sleepdaysオフィシャルウェブサイト">
+<meta property="og:image" content="<%= "#{root_url}images/ogp.jpg" %>" />
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:title" content="<%= yield :twitter_title %>" />
+<meta property="twitter:description" content="<%= yield :twitter_description %>" />
+<link rel="alternate" hreflang="ja" href="<%= request.url %>">
+<%= favicon_link_tag('favicon.ico') %>
+<%= favicon_link_tag 'icon.png', :rel => 'apple-touch-icon-precomposed' %>
+<!-- web clip icon -->
+<%= stylesheet_link_tag    'application', media: 'all' %>
+
+<% if Rails.env == "production" %>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KPV8P43');</script>
+<!-- End Google Tag Manager -->
+<% end %>
+
+
+
+<!-- Header
+------------------------------------------>
+<header class="header">
+  <div class="header_main">
+    <div class="header_logo">
+      <a href="/"><%= image_tag('logo_sleepdays_c.svg', :alt => 'Sleepdays logo') %></a>
+    </div>
+    <ul class="header_icon">
+      <li class="header_deco">Please follow us and feel free to contact us.</li>
+      <li>
+        <a href="https://www.instagram.com/sleepdays_official/" class="icon_instagram" target="_blank">
+          <span>Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a href="/contacts" class="icon_contact">
+          <span>Contact</span>
+        </a>
+      </li>
+    </ul>
+
+    <button id="header_toggle">
+      <svg class="burger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+      <path d="M24,12.5H0v-1h24V12.5z M24,2.5H0v1h24V2.5z M24,20.5H0v1h24V20.5z" />
+        </svg>
+    </button>
+  </div>
+  <div class="header_nav">
+    <div class="header_nav_cont">
+      <button id="header_close">
+        <svg class="close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve" >
+          <polygon points="21.3,2 12,11.3 2.7,2 2,2.7 11.3,12 2,21.3 2.7,22 12,12.7 21.2,22 22,21.3 12.7,12 22,2.7 21.3,2 	"/>
+        </svg>
+      </button>
+      <ul class="header_nav_links">
+        <li>
+          <a href="/about">ABOUT</a>
+        </li>
+        <li>
+          <a href="/products">PRODUCTS</a>
+        </li>
+        <li>
+          <a href="/news">NEWS</a>
+        </li>
+        <li>
+          <a href="/articles">COLUMN</a>
+        </li>
+        <li>
+          <a href="/faq">FAQ</a>
+        </li>
+        <li>
+          <a href="https://store.two2.jp/" target="_blank">BUY NOW</a>
+        </li>
+        <% if current_user %>
+          <li>
+            <a href="/admin/home">Dashboard</a>
+          </li>
+          <li>
+            <%= form_tag('/admin/logout', method:"delete") do %>
+              <%= submit_tag "Logout", data: { confirm: "Are you sure you logout?"} %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="header_nav_sublinks">
+        <li>
+          <a class="btn_shop" href="/shop-list">Shop list</a>
+        </li>
+        <li>
+          <a class="btn_instagram" href="https://www.instagram.com/sleepdays_official/" target="_blank">Instagram (#sleepdays)</a>
+        </li>
+        <li>
+          <a class="btn_contact" href="/contacts">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!-- End Header
+------------------------------------------>
+<%= yield %>
+<!-- Footer
+------------------------------------------>
+<footer class="footer">
+  <div class="footer_cont">
+    <div class="footer_logo ctr">
+      <a href="/">
+        <%= image_tag('logo_sleepdays_w.svg', :alt => 'Sleepdays logo') %>
+      </a>
+    </div>
+    <div class="footer_row row">
+      <div class="footer_col">
+        <p class="footer_heading">MENU</p>
+        <ul class="footer_nav">
+          <li>
+            <a href="/">Top</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/products">Products</a>
+          </li>
+          <li>
+            <a href="/news">News</a>
+          </li>
+          <li>
+            <a href="/articles">Column</a>
+          </li>
+          <li>
+            <a href="/faq">Faq</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer_col">
+        <p class="footer_heading">INFORMATION</p>
+        <ul class="footer_nav">
+          <li>
+            <a href="/shop-list">Shop list</a>
+          </li>
+          <li>
+            <a href="/association">Association</a>
+          </li>
+          <li>
+            <a href="/contacts">Contact</a>
+          </li>
+          <li>
+            <a href="/privacypolicy">Privacy policy</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer_col">
+        <p class="footer_heading">BUY NOW</p>
+        <ul class="footer_nav">
+          <li>
+            <a href="https://store.two2.jp/" target="_blank">Official store</a>
+          </li>
+          <li>
+            <a href="https://www.rakuten.co.jp/sleepdays/" target="_blank">Rakuten</a>
+          </li>
+          <li>
+            <a href="https://www.amazon.co.jp/sleepdays" target="_blank">Amazon</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer_col">
+        <p class="footer_heading">OTHER BRANDS</p>
+        <ul class="footer_nav footer_brands row">
+          <li>
+            <a href="http://barth.jp/"  target="_blank">
+              <%= image_tag('logo_barth_w.svg', :alt => 'BARTH logo') %>
+            </a>
+          </li>
+          <li>
+            <a href="https://kes-kin.com/"  target="_blank">
+              <%= image_tag('logo_keskin_w.svg', :alt => 'keskin logo') %>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer_col">
+        <a href="http://two2.jp/"  target="_blank">
+          <%= image_tag('logo_two_w.svg', :alt => 'TWO logo') %>
+        </a>
+        <span class="address fs_1">〒107-6035 東京都港区赤坂1-12-32 アーク森ビル35階 私書箱530号</span>
+      </div>
+      <div class="footer_col">
+        <span class="copy">© 2018 TWO Inc.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer
+------------------------------------------>
+
+
+
+
+
+<!-- Overlay
+------------------------------------------>
+<div class="overlay"></div>
+<!-- End Overlay
+------------------------------------------>
+
+
+
+
+
+<!-- JS
+------------------------------------------>
+<%= javascript_include_tag 'application' %>
+<!-- End JS
+------------------------------------------>

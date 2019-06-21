@@ -1,0 +1,78 @@
+<% provide :title, "ニュース一覧 | Sleepdays" %>
+<% provide :description, "Sleepdaysのニュースページです。Sleepdaysに関するイベント情報やニュースをお届けいたします。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "ニュース一覧 | Sleepdays" %>
+<% provide :og_description, "Sleepdaysのニュースページです。Sleepdaysに関するイベント情報やニュースをお届けいたします。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "ニュース一覧 | Sleepdays" %>
+<% provide :twitter_description, "Sleepdaysのニュースページです。Sleepdaysに関するイベント情報やニュースをお届けいたします。" %>
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",  root_path
+      add_breadcrumb "NEWS", news_index_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+    <!-- News
+    ------------------------------------------>
+
+    <!-- News
+    ------------------------------------------>
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml ctr">
+        <h1 class="heading_nohero fs_8 fw_5">NEWS</h1>
+        <% if @latest_news.present? %>
+        <ul class="news">
+          <% @latest_news.each do |news| %>
+          <li class="news_item">
+            <a href="<%= "/news/" + news.id.to_s %>">
+              <span class="news_date"><%= news.news_created_at.strftime('%b %d, %Y') if news.news_created_at %></span>
+              <%= news.title %>
+            </a>
+          </li>
+          <% end %>
+        </ul>
+        <% else %>
+        <ul class="news">
+          <li class="news_item">
+            <a href="javascript:void(0)">
+              <span class="news_date"></span>
+              現在表示できる項目がございません。
+            </a>
+          </li>
+        </ul>
+        <% end %>
+        <!-- <ol class="archive_footer">
+          <li class="archive_prev">
+            <a href="#"></a>
+          </li>
+          <li class="archive_num">
+            <a class="current_num" href="#">1</a>
+          </li>
+          <li class="archive_num">
+            <a href="#">2</a>
+          </li>
+          <li class="archive_num">
+            <a href="#">3</a>
+          </li>
+          <li class="archive_next">
+            <a href="#"></a>
+          </li>
+        </ol> -->
+      </div>
+    </section>
+    <!-- End News
+    ------------------------------------------>
+    <%= render "buy_now" %>
+    <%= render "column" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

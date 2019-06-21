@@ -1,0 +1,66 @@
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "管理画面TOP",    admin_home_path
+      add_breadcrumb "管理画面NEWS一覧", admin_news_index_path
+      add_breadcrumb @news.title, @news
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+    <!-- News
+    ------------------------------------------>
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml">
+        <div class="article">
+          <div class="article_date">
+            <%= @news.news_created_at.strftime('%b %d, %Y') if @news.news_created_at %>
+            <div>
+              <% if current_user %>
+                <%= link_to "[edit]", edit_admin_news_path(@news) %>
+                <%= form_for([:admin, @news], method:"delete") do |f| %>
+                  <%= f.submit value: "[delete]", data: { confirm: "Sure??"}, class: "btn_send" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <h1 class="heading_article fs_6 fw_5"><%= @news.title %></h1>
+          <%= @news.description.html_safe %>
+          <div class="article_footer">
+            <div class="article_parentlink">
+              <%= link_to "BACK TO INDEX",  admin_news_index_path, class: "btn_arrow_back"%>
+            </div>
+            <div class="article_pagination row">
+              <div class="pagination_col">
+                <% if @news.previous.present? %>
+                  <%= link_to "PREV",admin_news_path(@news.previous), class: "btn_arrow_back"%>
+                <% end %>
+              </div>
+              <div class="pagination_col">
+                <% if @news.next.present? %>
+                  <%= link_to "NEXT",admin_news_path(@news.next),class: "btn_arrow" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- End News
+    ------------------------------------------>
+
+    <%= render "buy_now" %>
+    <%= render "column" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

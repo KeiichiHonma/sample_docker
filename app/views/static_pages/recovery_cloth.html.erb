@@ -1,0 +1,103 @@
+<% provide :title, "Recovery Cloth (リカバリークロス) | Sleepdays" %>
+<% provide :description, "肌触りの良い柔らかい風合いで、肩から羽織る、膝に掛けるなど様々なシーンで活用できるサイズの機能性クロスです。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "Recovery Cloth (リカバリークロス) | Sleepdays" %>
+<% provide :og_description, "肌触りの良い柔らかい風合いで、肩から羽織る、膝に掛けるなど様々なシーンで活用できるサイズの機能性クロスです。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "Recovery Cloth (リカバリークロス) | Sleepdays"%>
+<% provide :twitter_description, "肌触りの良い柔らかい風合いで、肩から羽織る、膝に掛けるなど様々なシーンで活用できるサイズの機能性クロスです。" %>
+
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "PRODUCTS", products_path
+      add_breadcrumb "Recovery Cloth", recovery_cloth_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+
+    <!-- Product Single
+    ------------------------------------------>
+    <section class="sect">
+      <div class="sect_inner sect_mdl">
+        <div class="product_sgl row">
+          <div class="product_sgl_img">
+            <ul class="product_slider">
+              <li class="slider_item"><%= image_tag("/images/products/rcl/product_rcl01.png",alt: "Recovery Cloth" ) %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rcl/product_rcl02.png",alt: "Recovery Cloth" ) %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rcl/product_rcl03.png",alt: "Recovery Cloth" ) %></li>
+            </ul>
+            <button class="product_slider_prev"></button>
+            <button class="product_slider_next"></button>
+          </div>
+          <div class="product_sgl_cont">
+            <h1 class="product_heading heading fs_8 fw_5">Recovery Cloth</h1>
+            <p class="product_subheading fw_4">肌触りと機能性を両立させたクロス</p>
+            <p class="product_txt">A.A.TH®繊維の表面に品質の高い天然コットンを巻き付けたSleepdays独自の糸を使用しています。肌触りの良い柔らかい風合いで、肩から羽織る、膝に掛けるなど様々なシーンで活用できるサイズの機能性クロスです。</p>
+            <div class="product_price fs_4 fw_5">¥ 9,500 + Tax
+              <span class="product_option fs_2 fw_3">Color : Gray / Size：47㎝×105㎝</span>
+            </div>
+            <a class="product_btn" target="_blank" href="https://store.two2.jp/recovery-cloth">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bl_l"></div>
+    <section class="sect bg_g">
+      <div class="sect_inner sect_sml ctr">
+        <div class="product_sgl_feature">
+          <h3 class="heading fs_7 fw_5">USE “A.A.TH®”</h3>
+          <p class="product_feature_cont">A.A.TH®繊維は特許技術を用いて製造された、ナノレベルの鉱物を特殊配合した機能性繊維です。繊維に含まれる微小な貴金属が身体から発する熱などのエネルギーに反応します。</p>
+          <a class="btn_arrow btn_more" href="/about#spe">DISCOVER</a>
+        </div>
+      </div>
+    </section>
+    <div class="bl_m"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml ctr">
+        <div class="product_sgl_feature">
+          <h2 class="heading fs_7 fw_5">VARIOUS USES</h2>
+          <p class="product_feature_cont">肌触りの良い柔らかい風合いで、肩から羽織る、膝に掛けるなど様々なシーンで活用できるサイズの機能性クロスです。コンパクトに折りたためるので、外出時の持ち運びにも便利です。</p>
+        </div>
+      </div>
+    </section>
+    <div class="bl_m"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml ctr">
+        <div class="product_sgl_feature">
+          <h2 class="heading fs_7 fw_5">SOFTNESS AND FUNCTIONALITY</h2>
+          <p class="product_feature_cont">A.A.TH®繊維の表面に丹念に不要物を取り除いた超長綿と呼ばれる品質の高い天然コットンを巻き付けSleepdays独自の糸を開発しました。A.A.TH®繊維の機能を保持しながらも肌触りの良い柔らかい風合いを実現しています。</p>
+        </div>
+      </div>
+    </section>
+    <div class="bl_l"></div>
+    <section class="sect bg_g">
+      <div class="sect_inner sect_sml">
+        <div class="product_sgl_feature">
+          <h4 class="heading fs_4 fw_6 ctr">FEATURES</h4>
+          <div class="feature_detail row">
+            <dl class="feature_detail_col">
+              <dt class="detail_name heading fw_5">COUNTRY</dt>
+              <dd class="detail_txt">日本</dd>
+            </dl>
+            <dl class="feature_detail_col">
+              <dt class="detail_name heading fw_5">DETAIL</dt>
+              <dd class="detail_txt">47cm × 105cm</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%= render "novelties" %>
+    <%= render "column_news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

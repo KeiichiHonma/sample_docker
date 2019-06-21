@@ -21,7 +21,7 @@ RUN bundle install
 ADD . /sample_docker
 
 # puma.sockを配置するディレクトリを作成
-RUN mkdir -p sockets
+RUN mkdir -p tmp/sockets
 #RUN mkdir -p tmp/sockets
 #RUN mkdir -p tmp/pids
 RUN mkdir -p tmp/pids

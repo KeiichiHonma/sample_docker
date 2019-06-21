@@ -1,0 +1,53 @@
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "管理画面TOP",    admin_home_path
+      add_breadcrumb "管理画面NEWS一覧", admin_news_index_path
+      add_breadcrumb "NEWS編集 : " + @news.title, @news
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+    <!-- Form
+    ------------------------------------------>
+
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml ctr">
+        <h1 class="heading_nohero fs_8 fw_5">News編集</h1>
+      </div>
+      <%= form_for [:admin, @news] do |form| %>
+        <div class="sect_inner sect_mdl">
+          <ul class="contact_form row">
+            <li class="contact_item">
+              <%= form.label :title, "タイトル", class: :contact_item_label %>
+              <%= form.text_field :title, class: :contact_item_input %>
+              <p class="contact_item_caution"<% if !@news.errors.messages[:title].empty? %> style="visibility:visible"<% end %>><%= @news.errors.full_messages_for(:title) %></p>
+            </li>
+            <li class="contact_item">
+              <%= form.label :news_created_at, "表示日", class: :contact_item_label %>
+              <%= form.datetime_select :news_created_at, class: :contact_item_input %>
+            </li>
+            <li class="contact_item">
+              <%= form.label :description, "記事内容", class: :contact_item_label %>
+              <%= form.text_area :description, class: :contact_item_txt %>
+              <p class="contact_item_caution"<% if !@news.errors.messages[:description].empty? %> style="visibility:visible"<% end %>><%= @news.errors.full_messages_for(:description) %></p>
+            </li>
+          </ul>
+          <%= form.submit 'SEND', :class=>"btn_send"%>
+        </div>
+      <% end %>
+    </section>
+    <!-- END Form
+    ------------------------------------------>
+
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

@@ -1,0 +1,126 @@
+<% provide :title, "Recovery Short Sleeve T-Shirt (リカバリーショートスリーブTシャツ) | Sleepdays" %>
+<% provide :description, "着心地や寝心地など、様々な要素を突き詰めた結果、ミニマルなデザインでありながら、使いやすさと高い機能性を両立させたショートスリーブTシャツとして完成しました。" %>
+<% provide :og_type, "website" %>
+<% provide :og_title, "Recovery Short Sleeve T-Shirt (リカバリーショートスリーブTシャツ) | Sleepdays" %>
+<% provide :og_description, "着心地や寝心地など、様々な要素を突き詰めた結果、ミニマルなデザインでありながら、使いやすさと高い機能性を両立させたショートスリーブTシャツとして完成しました。" %>
+<% provide :og_url, request.url %>
+<% provide :twitter_title, "Recovery Short Sleeve T-Shirt (リカバリーショートスリーブTシャツ) | Sleepdays"%>
+<% provide :twitter_description, "着心地や寝心地など、様々な要素を突き詰めた結果、ミニマルなデザインでありながら、使いやすさと高い機能性を両立させたショートスリーブTシャツとして完成しました。" %>
+
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+    ------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "PRODUCTS", products_path
+      add_breadcrumb "Recovery Short Sleeve T-Shirt", recovery_short_sleeve_tshirt_path
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+
+    <!-- Product Single
+    ------------------------------------------>
+    <section class="sect">
+      <div class="sect_inner sect_mdl">
+        <div class="product_sgl row">
+          <div class="product_sgl_img">
+            <ul class="product_slider">
+              <li class="slider_item"><%= image_tag("/images/products/rsst/product_rsst01.png",alt: "Recovery Short Sleeve T-Shirt" ) %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rsst/product_rsst02.png",alt: "Recovery Short Sleeve T-Shirt" ) %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rsst/product_rsst03.png",alt: "Recovery Short Sleeve T-Shirt" ) %></li>
+              <li class="slider_item"><%= image_tag("/images/products/rsst/product_rsst04.png",alt: "Recovery Short Sleeve T-Shirt" ) %></li>
+            </ul>
+            <button class="product_slider_prev"></button>
+            <button class="product_slider_next"></button>
+          </div>
+          <div class="product_sgl_cont">
+            <h1 class="product_heading heading fs_8 fw_5">Recovery Short Sleeve T-Shirt</h1>
+            <p class="product_subheading fw_4">着心地と使いやすさを両立させた高機能Tシャツ</p>
+            <p class="product_txt">特許取得のA.A.TH®繊維で優しく包み込み、休息時の寝返りなどで肌にストレスがかからないよう、1本の糸を編み上げるところからこだわり抜いています。</p>
+            <div class="product_price fs_4 fw_5">¥ 12,000 + Tax
+              <span class="product_option fs_2 fw_3">Color : Gray / Size : Men S, M，L  Women S, M,L</span>
+            </div>
+            <!-- <div class="product_check">
+              <div class="check_item">
+                <span class="check_name">Sex :</span>
+                <input type="radio" name="sex" value="" checked>Men
+                <input type="radio" name="sex" value="">Women
+              </div>
+              <div class="check_item">
+                <span class="check_name">Size :</span>
+                <input type="radio" name="size" value="" checked>S
+                <input type="radio" name="size" value="">M
+                <input type="radio" name="size" value="">L
+              </div>
+            </div> -->
+            <a class="product_btn" target="_blank" href="https://store.two2.jp/recovery-short-sleeve-t">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bl_l"></div>
+    <section class="sect bg_g">
+      <div class="sect_inner sect_sml ctr">
+        <div class="product_sgl_feature">
+          <h3 class="heading fs_7 fw_5">USE “A.A.TH®”</h3>
+          <p class="product_feature_cont">A.A.TH®繊維は特許技術を用いて製造された、ナノレベルの鉱物を特殊配合した機能性繊維です。繊維に含まれる微小な貴金属が身体から発する熱などのエネルギーに反応します。</p>
+          <a class="btn_arrow btn_more" href="/about#spe">DISCOVER</a>
+        </div>
+      </div>
+    </section>
+    <div class="bl_m"></div>
+    <section class="sect">
+      <div class="sect_inner sect_mdl">
+        <div class="product_sgl_feature">
+          <div class="feature_item row">
+            <div class="feature_item_col feature_txt">
+              <h2 class="feature_heading heading fs_7 fw_5">REDUCE STRESS</h2>
+              <p class="product_feature_cont">下着の縫製などで採用されるフラットシーマで縫製をしています。縫い目などのわずかなひっかかりが休息時のストレスに繋がるため、それらをできるだけ排除しています。ディティールへのこだわりが、寝返りの際などに感じるわずかなストレスをも軽減します。</p>
+            </div>
+            <div class="feature_item_col">
+              <%= image_tag("/images/products/rsst/feature_rsst01.jpg",class: "feature_img" ) %>
+            </div>
+          </div>
+          <div class="feature_item row">
+            <div class="feature_item_col feature_txt">
+              <h2 class="feature_heading heading fs_7 fw_5">REDUCE STRESS</h2>
+              <p class="product_feature_cont">下着の縫製などで採用されるフラットシーマで縫製をしています。縫い目などのわずかなひっかかりが休息時のストレスに繋がるため、それらをできるだけ排除しています。ディティールへのこだわりが、寝返りの際などに感じるわずかなストレスをも軽減します。</p>
+            </div>
+            <div class="feature_item_col">
+              <%= image_tag("/images/products/rsst/feature_rsst02.jpg",class: "feature_img" ) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bl_l"></div>
+    <section class="sect bg_g">
+      <div class="sect_inner sect_sml">
+        <div class="product_sgl_feature">
+          <h4 class="heading fs_4 fw_6 ctr">FEATURES</h4>
+          <div class="feature_detail row">
+            <dl class="feature_detail_col">
+              <dt class="detail_name heading fw_5">COMPOSITION</dt>
+              <dd class="detail_txt">ポリエステル 55％ / 綿 45％</dd>
+              <dt class="detail_name heading fw_5">COUNTRY</dt>
+              <dd class="detail_txt">日本</dd>
+            </dl>
+            <dl class="feature_detail_col">
+              <dt class="detail_name heading fw_5">DETAIL</dt>
+              <dd class="detail_txt">Men（胸囲） : 84〜92cm(S)、 88〜95cm(M)、92〜100cm(L) / （身長） : 160〜170cm(S)、 165〜175cm(M)、170〜180cm(L)<br>Women（胸囲） : 76〜84cm(S)、 79〜87cm(M)、82〜90cm(L) / （身長） : 150〜160cm(S)、 155〜165cm(M)、160〜170cm(L)</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%= render "novelties" %>
+    <%= render "column_news" %>
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

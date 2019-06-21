@@ -1,0 +1,43 @@
+<% provide :title, t("common_title") %>
+<% provide :description, t("common_description") %>
+<% provide :og_type, "website" %>
+<% provide :og_title, t("common_description") %>
+<% provide :og_description, t("common_description") %>
+<% provide :og_url, request.url %>
+<% provide :twitter_card, "summary" %>
+<% provide :twitter_title, t("common_description") %>
+<% provide :twitter_description, t("common_description") %>
+<!-- Wrapper
+------------------------------------------>
+<div id="wrapper">
+  <div class="wrapper_cont">
+
+    <!-- Breadcrumb
+------------------------------------------>
+    <%
+      add_breadcrumb "TOP",    root_path
+      add_breadcrumb "404 NOT FOUND"
+    %>
+    <!-- End Breadcrumb
+    ------------------------------------------>
+    <%= render "breadcrumbs" %>
+
+    <!-- Thank You
+    ------------------------------------------>
+    <div class="bl_s"></div>
+    <section class="sect">
+      <div class="sect_inner sect_sml ctr">
+        <h1 class="heading fs_8 fw_5">404 NOT FOUND</h1>
+        <p class="multi_cont">指定されたページ(URL)は見つかりません。<br>指定されたページは削除されたか、名前が変更されたか、一時的に利用できない可能性があります。</p>
+        <div class="multi_link ctr">
+          <a class="btn_arrow_back" href="/">BACK TO TOP</a>
+        </div>
+      </div>
+    </section>
+    <!-- End Thank You
+    ------------------------------------------>
+    
+  </div>
+</div>
+<!-- End Wrapper
+------------------------------------------>

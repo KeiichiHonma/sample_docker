@@ -1,5 +1,5 @@
-FROM ruby:2.4.2
-RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
+FROM ruby:2.5.1
+
 # リポジトリを更新し依存モジュールをインストール
 RUN apt-get update -qq && \
     apt-get install -y build-essential \
@@ -21,7 +21,7 @@ RUN bundle install
 ADD . /sample_docker
 
 # puma.sockを配置するディレクトリを作成
-RUN mkdir -p tmp/sockets
+RUN mkdir -p sockets
 #RUN mkdir -p tmp/sockets
 #RUN mkdir -p tmp/pids
 RUN mkdir -p tmp/pids

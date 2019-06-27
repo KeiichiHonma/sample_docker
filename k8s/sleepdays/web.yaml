@@ -106,8 +106,8 @@ spec:
             - /bin/bash
           args:
             - -c
-            #- cp -rf /sample_docker/tmp/public/* /sample_docker/public && rm -rf /sample_docker/tmp/public && bundle exec puma -C config/puma.rb
-            - bundle exec rails assets:precompile RAILS_ENV=development && bundle exec puma -C config/puma.rb
+            - cp -rf /sample_docker/tmp/public/* /sample_docker/public && rm -rf /sample_docker/tmp/public && bundle exec puma -C config/puma.rb
+            #- bundle exec rails assets:precompile RAILS_ENV=development && bundle exec puma -C config/puma.rb
           readinessProbe:
             httpGet:
               path: /

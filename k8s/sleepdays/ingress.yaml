@@ -12,7 +12,7 @@ spec:
   - host: ssl-sleepdays.com
     http:
       paths:
-      - path: /
+      - path: /*
         backend:
           serviceName: webserver-service
           servicePort: 3000

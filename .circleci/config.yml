@@ -78,7 +78,7 @@ jobs:
               envsubst < ${MANIFESTS_DIR}/job.yaml > ${MANIFESTS_DIR}/patched_job.yaml
               chmod +x ${MANIFESTS_DIR}/deploy.sh
               ${MANIFESTS_DIR}/deploy.sh
-              #kubectl apply -f ${MANIFESTS_DIR}/patched_ingress.yaml --record
+              kubectl apply -f ${MANIFESTS_DIR}/patched_ingress.yaml --record
               echo 4
               kubectl apply -f ${MANIFESTS_DIR}/patched_web.yaml --record
               echo 5

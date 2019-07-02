@@ -31,4 +31,4 @@ while [ true ]; do
     exit 1
   fi
 done
-#kubectl delete job setup || true
+kubectl delete job setup || true

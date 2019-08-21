@@ -84,5 +84,5 @@ jobs:
               ${MANIFESTS_DIR}/deploy.sh
               #kubectl apply -f ${MANIFESTS_DIR}/patched_ingress.yaml --record
               kubectl apply -f ${MANIFESTS_DIR}/patched_web.yaml --record
-              #kubectl apply -f ${MANIFESTS_DIR}/patched_job.yaml --record
+              kubectl apply -f ${MANIFESTS_DIR}/patched_job.yaml --record
             fi

@@ -4,11 +4,13 @@ jobs:
     working_directory: /app
     environment:
       PROJECT_NAME: testing-20190417
-      CLUSTER_NAME: sample-docker
+      #CLUSTER_NAME: sample-docker
+      CLUSTER_NAME: sleepdays-development-cluster
       #CLOUD_REGISTRY_NAME: only_nginx
       CLOUD_REGISTRY_NAME: sample_docker
       CLOUDSDK_COMPUTE_ZONE: asia-northeast1-a
-      SQL_INSTANCE_NAME: testing-20190417:asia-northeast1:sample-docker-sql
+      SQL_INSTANCE_NAME: testing-20190417:asia-northeast1:sleepdays-development
+
 
       # MANIFESTS_DIR: ./k8s/gke_rails_puma
       #MANIFESTS_DIR: ./k8s/nginx
@@ -81,9 +83,6 @@ jobs:
               chmod +x ${MANIFESTS_DIR}/deploy.sh
               ${MANIFESTS_DIR}/deploy.sh
               #kubectl apply -f ${MANIFESTS_DIR}/patched_ingress.yaml --record
-              echo 4
               kubectl apply -f ${MANIFESTS_DIR}/patched_web.yaml --record
-              echo 5
               #kubectl apply -f ${MANIFESTS_DIR}/patched_job.yaml --record
-              echo 6
             fi

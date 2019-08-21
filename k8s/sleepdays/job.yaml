@@ -84,6 +84,7 @@ spec:
             - name: RAILS_MASTER_KEY
               valueFrom:
                 secretKeyRef:
+
                   name: secret
                   key: secret_key_base
             - name: MYSQL_USER

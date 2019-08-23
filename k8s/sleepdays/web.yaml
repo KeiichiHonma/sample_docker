@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: webserver-service
+  name: development-webserver-service
 spec:
   selector:
     app: rails

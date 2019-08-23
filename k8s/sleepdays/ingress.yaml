@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: rails-development-ing
+  name: development-rails-ing
   annotations:
     kubernetes.io/ingress.global-static-ip-name: https-development-ip
     ingress.gcp.kubernetes.io/pre-shared-cert: https-development-cert
 spec:
   tls:
-  - secretName: cert-manager-tls
+  - secretName: development-cert-manager-tls
   rules:
   - host: development-ssl-sleepdays.com
     http:
       paths:
       - path: /*
         backend:
-          serviceName: webserver-service
+          serviceName: development-webserver-service
           servicePort: 3000

@@ -9,7 +9,7 @@ spec:
   tls:
   - secretName: development-cert-manager-tls
   rules:
-  - host: development-ssl-sleepdays.com
+  - host: ssl-barth.com
     http:
       paths:
       - path: /*
